@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "funnytotem",
+  "version": "${version}",
+  "name": "FunnyTotem",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/Cliff/FunnyTotem"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/funnytotem/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.cliff.funnytotem.FunnyTotem"
+    ]
+  },
+  "mixins": [
+    "funnytotem.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
