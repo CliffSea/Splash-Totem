@@ -3,6 +3,7 @@ package me.cliff.funnytotem;
 import com.mojang.blaze3d.systems.RenderSystem;
 import me.cliff.funnytotem.event.TotemPopEvent;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.client.sound.SoundManager;
 import net.minecraft.util.Identifier;
@@ -43,17 +44,14 @@ public class pop {
 
             float alph = 1.0f - (float) eTime / 800 ;
 
-            System.out.println(alph);
-
             RenderSystem.setShaderTexture(0,TEXID);
             RenderSystem.enableBlend();
             RenderSystem.defaultBlendFunc();
             RenderSystem.setShaderColor(1.0f,1.0f,1.0f,alph);
 
-            drawContext.drawTexture(TEXID,0,0,0,0,sWidth,sHeight,sWidth,sHeight);
+            drawContext.drawTexture(RenderLayer::getGuiTextured,TEXID,0,0,0,0,sWidth,sHeight,sWidth,sHeight);
             RenderSystem.disableBlend();
         });
-
     }
 
 

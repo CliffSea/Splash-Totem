@@ -12,8 +12,6 @@ import me.cliff.funnytotem.pop;
 import net.minecraft.sound.SoundEvents;
 
 
-import java.io.IOException;
-
 import static me.cliff.funnytotem.FunnyTotem.mc;
 
 public class TotemPopManager {
@@ -35,7 +33,7 @@ public class TotemPopManager {
     @Subscribe
     public static void onPlaySound(PlaySoundEvent event) {
         if (mc.world == null || event.sound == null) return;
-        if (SoundEvents.ITEM_TOTEM_USE.getId().equals(event.sound.getId())) {
+        if (SoundEvents.ITEM_TOTEM_USE.id().equals(event.sound.getId())) {
             event.cancel();
         }
     }

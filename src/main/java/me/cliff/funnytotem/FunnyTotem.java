@@ -1,14 +1,11 @@
 package me.cliff.funnytotem;
 
 import com.google.common.eventbus.EventBus;
-import me.cliff.funnytotem.event.TotemPopEvent;
 import me.cliff.funnytotem.util.TotemPopManager;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.resource.ResourceManager;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
@@ -37,7 +34,6 @@ public class FunnyTotem implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         EVENT_BUS.register(POP_MANAGER);
-
         Registry.register(Registries.SOUND_EVENT, FunnyTotem.MY_SOUND_ID, MY_SOUND_EVENT);
     }
 
